@@ -72,7 +72,8 @@ exchange | No | string | SET, FRA |
 }
 ```
 2. Get stock price by symbol
-    this API will data when you already know company symbol.
+    
+    this API will get data when you already know company symbol.
     
     > **{url}/stock_price/{symbol}**
     
