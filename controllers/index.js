@@ -38,16 +38,17 @@ export const GetStockPriceBySymbol = async (req, res) => {
 /*  get method
     query:
         search : quote require field when you need to search for anything
-        exchange : the exchange symbol that company contain if don't have this, I will always get first symbol from search
+        exchange : the exchange symbol that company registered if don't have this, I will always get first symbol from search
 */
 export const GetStockPriceBySearch = async (req, res) => {
   try {
+    await ConnectCaching();
     const { search, exchange } = req.query;
     if (!search)
       return res
         .status(400)
         .send({ message: `"search" value in query are require` });
-    await ConnectCaching();
+
     let qList = await GetCaching(search);
     if (!qList) {
       qList = await searchFinance(search);
