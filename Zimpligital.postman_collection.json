@@ -1,0 +1,65 @@
+{
+	"info": {
+		"_postman_id": "b6e69ccc-dc75-4f4d-9bfc-df31632638d1",
+		"name": "Zimpligital",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25029404"
+	},
+	"item": [
+		{
+			"name": "Get stock price by search query",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "127.0.0.1:8000/stock_price?search=tesla",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"stock_price"
+					],
+					"query": [
+						{
+							"key": "exchange",
+							"value": null,
+							"description": "ex. SET | FRA | PNK",
+							"disabled": true
+						},
+						{
+							"key": "search",
+							"value": "tesla"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get stock price by company symbol [stock_price/{symbol}]",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "127.0.0.1:8000/stock_price/tsla",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"stock_price",
+						"tsla"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
